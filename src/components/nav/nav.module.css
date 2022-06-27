@@ -3,3 +3,15 @@
   padding: 10px;
   outline: 1px solid black;
 }
+.menu{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.menu__item{
+  list-style: none;
+}
+.menu__link{
+  color: #030303;
+  text-decoration: none;
+}
