@@ -14,10 +14,6 @@
   ;
 }
 
-.nav{
-  grid-area: nav;
-  outline: 1px solid black;
-}
 .main{
   grid-area: main;
   outline: 1px solid black;
