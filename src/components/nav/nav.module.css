@@ -15,3 +15,7 @@
   color: #030303;
   text-decoration: none;
 }
+.menu__active{
+  color: tomato;
+  text-decoration: none;
+}

@@ -1,0 +1,76 @@
+.container{
+  display: flex;
+  padding: 20px;
+}
+.pageItems{
+  list-style: none;
+  margin: 5px;
+}
+.previousLabel{
+  list-style: none;
+  margin: 5px;
+}
+.nextLabel{
+  list-style: none;
+  margin: 5px;
+}
+.breacklabel{
+  list-style: none;
+  margin: 5px;
+}
+.activePage{
+  font-weight: 900;
+}
+.userContainer{
+  font-size: 16px;
+  color:#555;
+ 
+  display: flex;
+  margin: 20px;
+}
+.userLogo{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  margin-right: 10px;
+}
+.userPhoto{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 10px;
+}
+.userFollow{
+  
+  border: none;
+  background-color: #222;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+}
+.userDiscription{
+  font-weight: 700;
+  border: 2px solid #222;
+  border-radius: 10px;
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.userInfoLeft{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.userStatus{
+  font-weight: 400;
+}
+.userInfoRight{
+  
+}
+.userCountry{
+  margin-bottom: 30px;
+}

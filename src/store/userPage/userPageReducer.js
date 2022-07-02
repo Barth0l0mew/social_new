@@ -1,16 +1,41 @@
-import { SETDATA } from "./userPageAC";
+import { SET_CURRENT_PAGE, SET_DATA, SET_PAGE_COUNT, SET_TOTAL_COUNT } from "./userPageAC";
 let initial = {
   users: [],
+  pageSize: 10,
+  totalCount:0,
+  currentPage:1,
+  pageCount:0
 };
 export const userPageReducer = (state = initial, action) => {
   switch (action.type) {
-    case SETDATA: {
+    case SET_DATA: {
       let stateCopy = {
         ...state,
-        users: [...state.users, ...action.payLoad],
+        users: action.payLoad,
       };
       console.log ('state',stateCopy)
       return stateCopy;
+    }
+    case SET_TOTAL_COUNT: {
+      let stateCopy = {
+        ...state,
+        totalCount: action.payLoad
+      };
+      return stateCopy;
+    }
+    case SET_PAGE_COUNT: {
+      let stateCopy = {
+        ...state,
+        pageCount: action.payLoad
+      }
+      return stateCopy
+    }
+    case SET_CURRENT_PAGE:{
+      let stateCopy = {
+        ...state,
+        currentPage: action.payLoad
+      }
+      return stateCopy
     }
     default:
       return state;
