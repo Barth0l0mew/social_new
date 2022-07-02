@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import UserPage from "../../components/userPage/userPage";
-import { onSetCurrentPage, onSetDataAC, onSetPageCount, onSetTotalCount } from "../../store/userPage/userPageAC";
+import { onSetCurrentPage, onSetDataAC, onSetFollow, onSetPageCount, onSetTotalCount } from "../../store/userPage/userPageAC";
 import UserPageClass from "./userPageClass";
 const mapStateToProps =(state)=>{
   console.log (state)
@@ -18,7 +18,8 @@ const mapDispatchToProps = (dispatch)=>{
     dataSet:(body)=>{dispatch(onSetDataAC(body))},
     setTotalCount:(body)=>{dispatch(onSetTotalCount(body))},
     setPageCount:(body)=>{dispatch(onSetPageCount(body))},
-    setCurrentPage:(body)=>{dispatch(onSetCurrentPage(body))}
+    setCurrentPage:(body)=>{dispatch(onSetCurrentPage(body))},
+    setFollow:(body)=>{dispatch(onSetFollow(body))}
   }
 }
 export const UserPageContainer = connect (mapStateToProps, mapDispatchToProps)(UserPageClass)

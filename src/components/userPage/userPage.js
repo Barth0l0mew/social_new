@@ -13,7 +13,7 @@ const UserPage = (props) => {
           <div key={id} className={Style.userContainer}>
             <div className={Style.userLogo}>
               <img className={Style.userPhoto} src={element.photos.small?element.photos.small:noPhoto}></img>
-              <button className={Style.userFollow}>{!element.follow?"Follow":"UnFollow"}</button>
+              <button className={Style.userFollow} onClick={()=>props.onChangeFollow(element.id)}>{!element.followed?"Follow":"UnFollow"}</button>
             </div>
             <div className={Style.userDiscription}>
               <div className={Style.userInfoLeft}>

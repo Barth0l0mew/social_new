@@ -4,7 +4,9 @@ import UserPage from "../../components/userPage/userPage";
 class UserPageClass extends React.Component {
   constructor (props) {
     super (props);
-    this.handlePageClick=this.handlePageClick.bind(this)
+    this.handlePageClick=this.handlePageClick.bind(this);
+    this.onChangeFollow=this.onChangeFollow.bind(this);
+
   }
   componentDidMount(){
     console.log (this.props.users.length)
@@ -30,9 +32,13 @@ class UserPageClass extends React.Component {
       this.props.setPageCount(Math.ceil(response.data.totalCount/this.props.pageSize))
     });
   }
+  onChangeFollow(id){
+    console.log (id)
+    this.props.setFollow(id)
+  }
   render (){
     return (
-      <UserPage {...this.props} handlePageClick={this.handlePageClick}></UserPage>
+      <UserPage {...this.props} handlePageClick={this.handlePageClick} onChangeFollow={this.onChangeFollow}></UserPage>
     )
   }
 }

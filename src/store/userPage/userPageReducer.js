@@ -1,4 +1,4 @@
-import { SET_CURRENT_PAGE, SET_DATA, SET_PAGE_COUNT, SET_TOTAL_COUNT } from "./userPageAC";
+import { SET_CURRENT_PAGE, SET_DATA, SET_FOLLOW, SET_PAGE_COUNT, SET_TOTAL_COUNT } from "./userPageAC";
 let initial = {
   users: [],
   pageSize: 10,
@@ -34,6 +34,20 @@ export const userPageReducer = (state = initial, action) => {
       let stateCopy = {
         ...state,
         currentPage: action.payLoad
+      }
+      return stateCopy
+    }
+    case SET_FOLLOW:{
+      console.log (action.payLoad)
+      let stateCopy = {
+        ...state,
+        users:state.users.map(users=>{
+          if (users.id === action.payLoad){
+           
+            return {...users,followed:!users.followed}
+          }
+          return users
+        })
       }
       return stateCopy
     }
