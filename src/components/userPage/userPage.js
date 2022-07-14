@@ -39,7 +39,11 @@ const UserPage = (props) => {
         nextClassName={Style.nextLabel}
         breakClassName={Style.breacklabel}
         activeClassName={Style.activePage}
+        activeLinkClassName={Style.activePage}
         breakLabel="..."
+        forcePage={props.currentPage}
+        pageRangeDisplayed={3}
+        marginPagesDisplayed={2}
         onPageChange={props.handlePageClick}
         onPageActive={props.handlePageClick}
       ></ReactPaginate>

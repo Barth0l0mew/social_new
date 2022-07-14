@@ -4,6 +4,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import LayOut from "./components/layOut/layOut";
 import { UserPageContainer } from "./container/userPageContainer/userPageContainer";
+import Profile from "./components/profile/profile";
 
 function App(props) {
   console.log(props);
@@ -11,6 +12,9 @@ function App(props) {
     <div className="App">
       <Routes>
         <Route path="" element={<LayOut></LayOut>}>
+          <Route index element={<Profile></Profile>}>
+            
+          </Route>
           <Route
             path="users"
             element={<UserPageContainer></UserPageContainer>}

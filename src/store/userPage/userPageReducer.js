@@ -1,10 +1,11 @@
-import { SET_CURRENT_PAGE, SET_DATA, SET_FOLLOW, SET_PAGE_COUNT, SET_TOTAL_COUNT } from "./userPageAC";
+import { SET_CURRENT_PAGE, SET_DATA, SET_FOLLOW, SET_IS_FETCHING, SET_PAGE_COUNT, SET_TOTAL_COUNT } from "./userPageAC";
 let initial = {
   users: [],
   pageSize: 10,
   totalCount:0,
-  currentPage:1,
-  pageCount:0
+  currentPage:0,
+  pageCount:0,
+  isFetching:true
 };
 export const userPageReducer = (state = initial, action) => {
   switch (action.type) {
@@ -48,6 +49,12 @@ export const userPageReducer = (state = initial, action) => {
           }
           return users
         })
+      }
+      return stateCopy
+    }
+    case SET_IS_FETCHING:{
+      let stateCopy = {
+        ...state, isFetching:action.payLoad
       }
       return stateCopy
     }
